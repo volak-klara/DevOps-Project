@@ -1,10 +1,11 @@
-const API_URL = "http://localhost:8080/api/tasks";
+const API_URL = "/api/tasks";
+
 
 const taskList = document.getElementById("taskList");
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 
-// Load all tasks
+
 async function loadTasks() {
     const response = await fetch(API_URL);
     const tasks = await response.json();
@@ -29,7 +30,7 @@ async function loadTasks() {
 }
 
 
-// Add new task
+
 async function addTask() {
     const title = taskInput.value.trim();
     if (!title) return;
@@ -51,5 +52,5 @@ async function addTask() {
 
 addBtn.addEventListener("click", addTask);
 
-// Load tasks on page load
+
 loadTasks();
